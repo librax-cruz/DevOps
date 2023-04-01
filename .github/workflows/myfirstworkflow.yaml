@@ -14,9 +14,9 @@ jobs:
                 uses: actions/checkout@v3
               - name: Step Two
                 run: | 
-                  touch newfile.yaml
-                  echo "Please Alex is Fridat let me escape" >> newfile.yaml
-                  cat newfile.yaml
+                  touch ${{secrets.MY_SECRET}}.yaml
+                  echo "Please Alex is Fridat let me escape" >> ${{secrets.MY_SECRET}}.yaml
+                  cat ${{secrets.MY_SECRET}}.yaml
                   pwd
     mysecondjob:
               needs: [myfirstjob]

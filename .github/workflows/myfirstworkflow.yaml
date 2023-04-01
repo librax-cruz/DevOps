@@ -1,0 +1,22 @@
+name: My cool workflow
+
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+  
+jobs:
+    myfirstjob:
+              name: First job
+              runs-on: ubuntu-latest
+              steps:
+              - name: Step One
+                uses: actions/checkout@v3
+              - name: Step Two
+                run: | 
+                  touch newfile.yaml
+                  echo "Please Alex is Fridat let me escape" >> newfile.yaml
+                  cat newfile.yaml
+                  pwd
+    
+    
